@@ -7,7 +7,7 @@ project_id = "supabase"
 port = 54321
 # Schemas to expose in your API. Tables, views and stored procedures in this schema will get API
 # endpoints. public and storage are always included.
-schemas = ["public", "storage", "graphql_public"]
+schemas = ["public", "graphql_public", "storage"]
 # Extra schemas to add to the search_path of every request. public is always included.
 extra_search_path = ["public", "extensions"]
 # The maximum number of rows returns from a view, table, or stored procedure. Limits payload size
@@ -79,6 +79,12 @@ redirect_uri = ""
 # Overrides the default auth provider URL. Used to support self-hosted gitlab, single-tenant Azure,
 # or any other third-party OIDC providers.
 url = ""
+
+[auth.external.google]
+enabled = true
+client_id = "58191394212-i73jhvketv04g5bnrtjorrg17ktkfjdf.apps.googleusercontent.com"
+secret = "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"
+
 
 [functions.search-embeddings]
 verify_jwt = false
